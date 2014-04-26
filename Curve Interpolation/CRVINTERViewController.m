@@ -9,16 +9,21 @@
 #import "CRVINTERViewController.h"
 #import "CRVINTERGraphicsView.h"
 
-@interface CRVINTERViewController ()
+@interface CRVINTERViewController () {
+    float controlHeightForCatmull;
+    float controlHeightForHermite;
+}
 @property (strong, nonatomic) IBOutlet UISegmentedControl *hermiteCatmull;
 @property (strong, nonatomic) IBOutlet UISlider *alphaSlider;
 @property (strong, nonatomic) IBOutlet UISwitch *closedSwitch;
 @property (strong, nonatomic) IBOutlet CRVINTERGraphicsView *graphicsView;
 @property (strong, nonatomic) IBOutlet UILabel *alphaLabel;
 @property (strong, nonatomic) IBOutlet UIButton *clearButton;
+@property (strong, nonatomic) IBOutlet UILabel *alphaTitle;
 
 @property UITapGestureRecognizer *gestureRecognizer;
 @property (strong, nonatomic) IBOutlet UILabel *noPointsHelperLabel;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *controlsHeight;
 
 - (IBAction)clearDataPoints:(UIButton *)sender;
 - (IBAction)alphaChanged:(UISlider *)sender;
@@ -46,9 +51,40 @@
     [self.graphicsView setNeedsDisplay];
 }
 
+- (void)animateHelpText:(float)toAlpha {
+    float startAlpha = (toAlpha == 0.0 ? 1.0 : 0.0);
+    if (self.noPointsHelperLabel.alpha == startAlpha) {
+        [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseIn
+                         animations:^{ self.noPointsHelperLabel.alpha = toAlpha;}
+                         completion:nil];
+    }
+}
+
+- (void)animateControlHeight {
+    float toHeight = (self.hermiteCatmull.selectedSegmentIndex == 0 ?
+                      controlHeightForHermite :
+                      controlHeightForCatmull);
+    
+    float fromHeight = (toHeight == controlHeightForHermite ?
+                        controlHeightForCatmull :
+                        controlHeightForHermite);
+    
+    if (self.controlsHeight.constant == fromHeight) {
+        [UIView animateWithDuration:1.0 delay:0 options:UIViewAnimationOptionCurveEaseIn
+                         animations:^{
+                             self.controlsHeight.constant = toHeight;
+                         }
+                         completion:nil];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    controlHeightForCatmull = 100.0;
+    controlHeightForHermite = 60.0;
+    self.controlsHeight.constant = controlHeightForHermite;
+    
     self.clearButton.layer.cornerRadius = 4;
     self.clearButton.clipsToBounds = YES;
     self.closedSwitch.onTintColor = [UIColor colorWithRed:0 green:122.0/255.0f blue:1.0 alpha:1.0];
@@ -67,12 +103,7 @@
 }
 
 - (IBAction)clearDataPoints:(UIButton *)sender {
-    if (self.noPointsHelperLabel.alpha == 0.0) {
-        [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseIn
-                         animations:^{ self.noPointsHelperLabel.alpha = 1.0;}
-                         completion:nil];
-    }
-    
+    [self animateHelpText:1.0];
     self.graphicsView.interpolationPoints = [NSMutableArray new];
     [self updateGraphicsView];
 }
@@ -82,6 +113,7 @@
 }
 
 - (IBAction)hermiteCatmullChanged:(UISegmentedControl *)sender {
+    [self animateControlHeight];
     [self updateGraphicsView];
 }
 
@@ -90,12 +122,7 @@
 }
 
 -(void)tapped:(UITapGestureRecognizer *)gesture {
-    if (self.noPointsHelperLabel.alpha == 1.0) {
-        [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseIn
-                         animations:^{ self.noPointsHelperLabel.alpha = 0.0;}
-                         completion:nil];
-    }
-    
+    [self animateHelpText:0.0];
     CGPoint touchedPt = [gesture locationOfTouch:0 inView:self.graphicsView];
     const char *encoding = @encode(CGPoint);
     [self.graphicsView.interpolationPoints addObject:[NSValue valueWithBytes:&touchedPt objCType:encoding]];
