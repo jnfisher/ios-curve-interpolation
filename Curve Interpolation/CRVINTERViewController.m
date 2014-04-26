@@ -18,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *clearButton;
 
 @property UITapGestureRecognizer *gestureRecognizer;
+@property (strong, nonatomic) IBOutlet UILabel *noPointsHelperLabel;
 
 - (IBAction)clearDataPoints:(UIButton *)sender;
 - (IBAction)alphaChanged:(UISlider *)sender;
@@ -66,6 +67,12 @@
 }
 
 - (IBAction)clearDataPoints:(UIButton *)sender {
+    if (self.noPointsHelperLabel.alpha == 0.0) {
+        [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseIn
+                         animations:^{ self.noPointsHelperLabel.alpha = 1.0;}
+                         completion:nil];
+    }
+    
     self.graphicsView.interpolationPoints = [NSMutableArray new];
     [self updateGraphicsView];
 }
@@ -83,6 +90,12 @@
 }
 
 -(void)tapped:(UITapGestureRecognizer *)gesture {
+    if (self.noPointsHelperLabel.alpha == 1.0) {
+        [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseIn
+                         animations:^{ self.noPointsHelperLabel.alpha = 0.0;}
+                         completion:nil];
+    }
+    
     CGPoint touchedPt = [gesture locationOfTouch:0 inView:self.graphicsView];
     const char *encoding = @encode(CGPoint);
     [self.graphicsView.interpolationPoints addObject:[NSValue valueWithBytes:&touchedPt objCType:encoding]];

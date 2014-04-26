@@ -19,7 +19,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nt6-tg-QDM" userLabel="Graphics" customClass="CRVINTERGraphicsView">
                                 <rect key="frame" x="0.0" y="20" width="320" height="398"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;tap to add points>" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0R-jM-h3D">
+                                        <rect key="frame" x="105" y="378" width="111" height="15"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="J0R-jM-h3D" secondAttribute="bottom" constant="5" id="CTO-An-YrZ"/>
+                                    <constraint firstAttribute="centerX" secondItem="J0R-jM-h3D" secondAttribute="centerX" id="jWt-kI-9Iq"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9sz-KM-2hn" userLabel="Controls">
                                 <rect key="frame" x="0.0" y="418" width="320" height="150"/>
@@ -124,6 +137,7 @@
                         <outlet property="closedSwitch" destination="zjI-kJ-0zw" id="a2k-jB-Gyn"/>
                         <outlet property="graphicsView" destination="Nt6-tg-QDM" id="4TM-JJ-7TO"/>
                         <outlet property="hermiteCatmull" destination="JLK-A1-KlL" id="GWN-CW-L3G"/>
+                        <outlet property="noPointsHelperLabel" destination="J0R-jM-h3D" id="446-Ix-lJk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gf9-Ht-k55" userLabel="First Responder" sceneMemberID="firstResponder"/>
