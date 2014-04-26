@@ -19,6 +19,11 @@
 		8868F9F1190C1CE500F5332C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8868F9D9190C1CE500F5332C /* UIKit.framework */; };
 		8868F9F9190C1CE500F5332C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8868F9F7190C1CE500F5332C /* InfoPlist.strings */; };
 		8868F9FB190C1CE500F5332C /* Curve_InterpolationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8868F9FA190C1CE500F5332C /* Curve_InterpolationTests.m */; };
+		8868FA05190C1D1300F5332C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8868FA04190C1D1300F5332C /* Main.storyboard */; };
+		88B642AB190C22FF00B6B5F3 /* CRVINTERGraphicsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B642AA190C22FF00B6B5F3 /* CRVINTERGraphicsView.m */; };
+		88B642B2190C23CF00B6B5F3 /* CGPointExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B642AD190C23CF00B6B5F3 /* CGPointExtension.m */; };
+		88B642B7190C240200B6B5F3 /* UIBezierPath+Interpolation.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B642B6190C240200B6B5F3 /* UIBezierPath+Interpolation.m */; };
+		88B642BA190C2A2900B6B5F3 /* CRVINTERViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B642B9190C2A2900B6B5F3 /* CRVINTERViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +53,15 @@
 		8868F9F6190C1CE500F5332C /* Curve InterpolationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Curve InterpolationTests-Info.plist"; sourceTree = "<group>"; };
 		8868F9F8190C1CE500F5332C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8868F9FA190C1CE500F5332C /* Curve_InterpolationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Curve_InterpolationTests.m; sourceTree = "<group>"; };
+		8868FA04190C1D1300F5332C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		88B642A9190C22FF00B6B5F3 /* CRVINTERGraphicsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRVINTERGraphicsView.h; sourceTree = "<group>"; };
+		88B642AA190C22FF00B6B5F3 /* CRVINTERGraphicsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRVINTERGraphicsView.m; sourceTree = "<group>"; };
+		88B642AC190C23CF00B6B5F3 /* CGPointExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGPointExtension.h; sourceTree = "<group>"; };
+		88B642AD190C23CF00B6B5F3 /* CGPointExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPointExtension.m; sourceTree = "<group>"; };
+		88B642B5190C240200B6B5F3 /* UIBezierPath+Interpolation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+Interpolation.h"; sourceTree = "<group>"; };
+		88B642B6190C240200B6B5F3 /* UIBezierPath+Interpolation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+Interpolation.m"; sourceTree = "<group>"; };
+		88B642B8190C2A2900B6B5F3 /* CRVINTERViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRVINTERViewController.h; sourceTree = "<group>"; };
+		88B642B9190C2A2900B6B5F3 /* CRVINTERViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRVINTERViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,10 +121,19 @@
 		8868F9DB190C1CE500F5332C /* Curve Interpolation */ = {
 			isa = PBXGroup;
 			children = (
+				88B642AC190C23CF00B6B5F3 /* CGPointExtension.h */,
+				88B642AD190C23CF00B6B5F3 /* CGPointExtension.m */,
 				8868F9E4190C1CE500F5332C /* CRVINTERAppDelegate.h */,
 				8868F9E5190C1CE500F5332C /* CRVINTERAppDelegate.m */,
+				88B642A9190C22FF00B6B5F3 /* CRVINTERGraphicsView.h */,
+				88B642AA190C22FF00B6B5F3 /* CRVINTERGraphicsView.m */,
+				88B642B5190C240200B6B5F3 /* UIBezierPath+Interpolation.h */,
+				88B642B6190C240200B6B5F3 /* UIBezierPath+Interpolation.m */,
+				88B642B8190C2A2900B6B5F3 /* CRVINTERViewController.h */,
+				88B642B9190C2A2900B6B5F3 /* CRVINTERViewController.m */,
 				8868F9E7190C1CE500F5332C /* Images.xcassets */,
 				8868F9DC190C1CE500F5332C /* Supporting Files */,
+				8868FA04190C1D1300F5332C /* Main.storyboard */,
 			);
 			path = "Curve Interpolation";
 			sourceTree = "<group>";
@@ -222,6 +245,7 @@
 			files = (
 				8868F9E0190C1CE500F5332C /* InfoPlist.strings in Resources */,
 				8868F9E8190C1CE500F5332C /* Images.xcassets in Resources */,
+				8868FA05190C1D1300F5332C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +264,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88B642AB190C22FF00B6B5F3 /* CRVINTERGraphicsView.m in Sources */,
+				88B642BA190C2A2900B6B5F3 /* CRVINTERViewController.m in Sources */,
+				88B642B7190C240200B6B5F3 /* UIBezierPath+Interpolation.m in Sources */,
 				8868F9E2190C1CE500F5332C /* main.m in Sources */,
+				88B642B2190C23CF00B6B5F3 /* CGPointExtension.m in Sources */,
 				8868F9E6190C1CE500F5332C /* CRVINTERAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,6 +466,7 @@
 				8868FA00190C1CE500F5332C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8868FA01190C1CE500F5332C /* Build configuration list for PBXNativeTarget "Curve InterpolationTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +475,7 @@
 				8868FA03190C1CE500F5332C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
