@@ -31,6 +31,34 @@
 }
 
 - (void)drawRect:(CGRect)rect {
+    // Dashed line drawing
+    UIBezierPath *dashedConnectors;
+    for (int ii=0; ii < [self.interpolationPoints count]; ++ii) {
+        NSValue *pv = self.interpolationPoints[ii];
+        CGPoint point;
+        [pv getValue:&point];
+        
+        if ([self.interpolationPoints count] > 1) {
+            if (ii == 0) {
+                dashedConnectors = [UIBezierPath new];
+                [dashedConnectors moveToPoint:point];
+            }
+            else {
+                [dashedConnectors addLineToPoint:point];
+            }
+        }
+    }
+    
+    if (_closed)
+        [dashedConnectors closePath];
+    
+    CGFloat dashedConnectorsPattern[] = {3, 3, 3, 3};
+    dashedConnectors.lineWidth = 0.5;
+    [[UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:1.0] setStroke];
+    [dashedConnectors setLineDash: dashedConnectorsPattern count: 4 phase: 0];
+    [dashedConnectors stroke];
+    
+    // Interpolation points drawing
     for (NSValue *pv in self.interpolationPoints) {
         CGPoint point;
         [pv getValue:&point];
@@ -40,6 +68,7 @@
         [pointPath fill];
     }
     
+    // Curve drawing
     UIBezierPath *path;
     if (_useHermite) {
         path = [UIBezierPath interpolateCGPointsWithHermite:self.interpolationPoints closed:_closed];

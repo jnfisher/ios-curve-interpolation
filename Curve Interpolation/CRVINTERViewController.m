@@ -38,6 +38,7 @@
 }
 
 - (void)updateGraphicsView {
+    self.alphaLabel.text = [NSString stringWithFormat:@"%.2f", self.alphaSlider.value];
     [self.graphicsView setIsClosed:self.closedSwitch.on];
     [self.graphicsView setAlpha:self.alphaSlider.value];
     [self.graphicsView setUseHermite:(self.hermiteCatmull.selectedSegmentIndex == 0)];
@@ -47,11 +48,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.clearButton.layer.cornerRadius = 8;
-    self.clearButton.layer.borderWidth = 1;
-    self.clearButton.layer.borderColor = [UIColor grayColor].CGColor;
+    self.clearButton.layer.cornerRadius = 4;
     self.clearButton.clipsToBounds = YES;
-    
+    self.closedSwitch.onTintColor = [UIColor colorWithRed:0 green:122.0/255.0f blue:1.0 alpha:1.0];
+    self.closedSwitch.tintColor = [UIColor colorWithRed:180.0/255.0f green:180.0/255.0f blue:180.0/255.0f alpha:1.0];
     
     self.gestureRecognizer = [[UITapGestureRecognizer alloc]
                                        initWithTarget:self
@@ -71,7 +71,6 @@
 }
 
 - (IBAction)alphaChanged:(UISlider *)sender {
-    self.alphaLabel.text = [NSString stringWithFormat:@"%.2f", sender.value];
     [self updateGraphicsView];
 }
 
@@ -85,7 +84,6 @@
 
 -(void)tapped:(UITapGestureRecognizer *)gesture {
     CGPoint touchedPt = [gesture locationOfTouch:0 inView:self.graphicsView];
-    NSLog(@"caught touch at %f, %f", touchedPt.x, touchedPt.y);
     const char *encoding = @encode(CGPoint);
     [self.graphicsView.interpolationPoints addObject:[NSValue valueWithBytes:&touchedPt objCType:encoding]];
     [self updateGraphicsView];
