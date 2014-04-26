@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8868F9D6190C1CE500F5332C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8868F9D5190C1CE500F5332C /* Foundation.framework */; };
+		8868F9D8190C1CE500F5332C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8868F9D7190C1CE500F5332C /* CoreGraphics.framework */; };
+		8868F9DA190C1CE500F5332C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8868F9D9190C1CE500F5332C /* UIKit.framework */; };
+		8868F9E0190C1CE500F5332C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8868F9DE190C1CE500F5332C /* InfoPlist.strings */; };
+		8868F9E2190C1CE500F5332C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8868F9E1190C1CE500F5332C /* main.m */; };
+		8868F9E6190C1CE500F5332C /* CRVINTERAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8868F9E5190C1CE500F5332C /* CRVINTERAppDelegate.m */; };
+		8868F9E8190C1CE500F5332C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8868F9E7190C1CE500F5332C /* Images.xcassets */; };
+		8868F9EF190C1CE500F5332C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8868F9EE190C1CE500F5332C /* XCTest.framework */; };
+		8868F9F0190C1CE500F5332C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8868F9D5190C1CE500F5332C /* Foundation.framework */; };
+		8868F9F1190C1CE500F5332C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8868F9D9190C1CE500F5332C /* UIKit.framework */; };
+		8868F9F9190C1CE500F5332C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8868F9F7190C1CE500F5332C /* InfoPlist.strings */; };
+		8868F9FB190C1CE500F5332C /* Curve_InterpolationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8868F9FA190C1CE500F5332C /* Curve_InterpolationTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8868F9F2190C1CE500F5332C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8868F9CA190C1CE500F5332C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8868F9D1190C1CE500F5332C;
+			remoteInfo = "Curve Interpolation";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8868F9D2190C1CE500F5332C /* Curve Interpolation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Curve Interpolation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8868F9D5190C1CE500F5332C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8868F9D7190C1CE500F5332C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8868F9D9190C1CE500F5332C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8868F9DD190C1CE500F5332C /* Curve Interpolation-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Curve Interpolation-Info.plist"; sourceTree = "<group>"; };
+		8868F9DF190C1CE500F5332C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8868F9E1190C1CE500F5332C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8868F9E3190C1CE500F5332C /* Curve Interpolation-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Curve Interpolation-Prefix.pch"; sourceTree = "<group>"; };
+		8868F9E4190C1CE500F5332C /* CRVINTERAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRVINTERAppDelegate.h; sourceTree = "<group>"; };
+		8868F9E5190C1CE500F5332C /* CRVINTERAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRVINTERAppDelegate.m; sourceTree = "<group>"; };
+		8868F9E7190C1CE500F5332C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8868F9ED190C1CE500F5332C /* Curve InterpolationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Curve InterpolationTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8868F9EE190C1CE500F5332C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8868F9F6190C1CE500F5332C /* Curve InterpolationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Curve InterpolationTests-Info.plist"; sourceTree = "<group>"; };
+		8868F9F8190C1CE500F5332C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8868F9FA190C1CE500F5332C /* Curve_InterpolationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Curve_InterpolationTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8868F9CF190C1CE500F5332C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8868F9D8190C1CE500F5332C /* CoreGraphics.framework in Frameworks */,
+				8868F9DA190C1CE500F5332C /* UIKit.framework in Frameworks */,
+				8868F9D6190C1CE500F5332C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8868F9EA190C1CE500F5332C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8868F9EF190C1CE500F5332C /* XCTest.framework in Frameworks */,
+				8868F9F1190C1CE500F5332C /* UIKit.framework in Frameworks */,
+				8868F9F0190C1CE500F5332C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8868F9C9190C1CE500F5332C = {
+			isa = PBXGroup;
+			children = (
+				8868F9DB190C1CE500F5332C /* Curve Interpolation */,
+				8868F9F4190C1CE500F5332C /* Curve InterpolationTests */,
+				8868F9D4190C1CE500F5332C /* Frameworks */,
+				8868F9D3190C1CE500F5332C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8868F9D3190C1CE500F5332C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8868F9D2190C1CE500F5332C /* Curve Interpolation.app */,
+				8868F9ED190C1CE500F5332C /* Curve InterpolationTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8868F9D4190C1CE500F5332C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8868F9D5190C1CE500F5332C /* Foundation.framework */,
+				8868F9D7190C1CE500F5332C /* CoreGraphics.framework */,
+				8868F9D9190C1CE500F5332C /* UIKit.framework */,
+				8868F9EE190C1CE500F5332C /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8868F9DB190C1CE500F5332C /* Curve Interpolation */ = {
+			isa = PBXGroup;
+			children = (
+				8868F9E4190C1CE500F5332C /* CRVINTERAppDelegate.h */,
+				8868F9E5190C1CE500F5332C /* CRVINTERAppDelegate.m */,
+				8868F9E7190C1CE500F5332C /* Images.xcassets */,
+				8868F9DC190C1CE500F5332C /* Supporting Files */,
+			);
+			path = "Curve Interpolation";
+			sourceTree = "<group>";
+		};
+		8868F9DC190C1CE500F5332C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8868F9DD190C1CE500F5332C /* Curve Interpolation-Info.plist */,
+				8868F9DE190C1CE500F5332C /* InfoPlist.strings */,
+				8868F9E1190C1CE500F5332C /* main.m */,
+				8868F9E3190C1CE500F5332C /* Curve Interpolation-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8868F9F4190C1CE500F5332C /* Curve InterpolationTests */ = {
+			isa = PBXGroup;
+			children = (
+				8868F9FA190C1CE500F5332C /* Curve_InterpolationTests.m */,
+				8868F9F5190C1CE500F5332C /* Supporting Files */,
+			);
+			path = "Curve InterpolationTests";
+			sourceTree = "<group>";
+		};
+		8868F9F5190C1CE500F5332C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8868F9F6190C1CE500F5332C /* Curve InterpolationTests-Info.plist */,
+				8868F9F7190C1CE500F5332C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8868F9D1190C1CE500F5332C /* Curve Interpolation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8868F9FE190C1CE500F5332C /* Build configuration list for PBXNativeTarget "Curve Interpolation" */;
+			buildPhases = (
+				8868F9CE190C1CE500F5332C /* Sources */,
+				8868F9CF190C1CE500F5332C /* Frameworks */,
+				8868F9D0190C1CE500F5332C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Curve Interpolation";
+			productName = "Curve Interpolation";
+			productReference = 8868F9D2190C1CE500F5332C /* Curve Interpolation.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8868F9EC190C1CE500F5332C /* Curve InterpolationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8868FA01190C1CE500F5332C /* Build configuration list for PBXNativeTarget "Curve InterpolationTests" */;
+			buildPhases = (
+				8868F9E9190C1CE500F5332C /* Sources */,
+				8868F9EA190C1CE500F5332C /* Frameworks */,
+				8868F9EB190C1CE500F5332C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8868F9F3190C1CE500F5332C /* PBXTargetDependency */,
+			);
+			name = "Curve InterpolationTests";
+			productName = "Curve InterpolationTests";
+			productReference = 8868F9ED190C1CE500F5332C /* Curve InterpolationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8868F9CA190C1CE500F5332C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CRVINTER;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "John Fisher";
+				TargetAttributes = {
+					8868F9EC190C1CE500F5332C = {
+						TestTargetID = 8868F9D1190C1CE500F5332C;
+					};
+				};
+			};
+			buildConfigurationList = 8868F9CD190C1CE500F5332C /* Build configuration list for PBXProject "Curve Interpolation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8868F9C9190C1CE500F5332C;
+			productRefGroup = 8868F9D3190C1CE500F5332C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8868F9D1190C1CE500F5332C /* Curve Interpolation */,
+				8868F9EC190C1CE500F5332C /* Curve InterpolationTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8868F9D0190C1CE500F5332C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8868F9E0190C1CE500F5332C /* InfoPlist.strings in Resources */,
+				8868F9E8190C1CE500F5332C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8868F9EB190C1CE500F5332C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8868F9F9190C1CE500F5332C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8868F9CE190C1CE500F5332C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8868F9E2190C1CE500F5332C /* main.m in Sources */,
+				8868F9E6190C1CE500F5332C /* CRVINTERAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8868F9E9190C1CE500F5332C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8868F9FB190C1CE500F5332C /* Curve_InterpolationTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8868F9F3190C1CE500F5332C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8868F9D1190C1CE500F5332C /* Curve Interpolation */;
+			targetProxy = 8868F9F2190C1CE500F5332C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8868F9DE190C1CE500F5332C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8868F9DF190C1CE500F5332C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8868F9F7190C1CE500F5332C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8868F9F8190C1CE500F5332C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8868F9FC190C1CE500F5332C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8868F9FD190C1CE500F5332C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8868F9FF190C1CE500F5332C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Curve Interpolation/Curve Interpolation-Prefix.pch";
+				INFOPLIST_FILE = "Curve Interpolation/Curve Interpolation-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8868FA00190C1CE500F5332C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Curve Interpolation/Curve Interpolation-Prefix.pch";
+				INFOPLIST_FILE = "Curve Interpolation/Curve Interpolation-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8868FA02190C1CE500F5332C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Curve Interpolation.app/Curve Interpolation";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Curve Interpolation/Curve Interpolation-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Curve InterpolationTests/Curve InterpolationTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		8868FA03190C1CE500F5332C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Curve Interpolation.app/Curve Interpolation";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Curve Interpolation/Curve Interpolation-Prefix.pch";
+				INFOPLIST_FILE = "Curve InterpolationTests/Curve InterpolationTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8868F9CD190C1CE500F5332C /* Build configuration list for PBXProject "Curve Interpolation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8868F9FC190C1CE500F5332C /* Debug */,
+				8868F9FD190C1CE500F5332C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8868F9FE190C1CE500F5332C /* Build configuration list for PBXNativeTarget "Curve Interpolation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8868F9FF190C1CE500F5332C /* Debug */,
+				8868FA00190C1CE500F5332C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8868FA01190C1CE500F5332C /* Build configuration list for PBXNativeTarget "Curve InterpolationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8868FA02190C1CE500F5332C /* Debug */,
+				8868FA03190C1CE500F5332C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8868F9CA190C1CE500F5332C /* Project object */;
+}
