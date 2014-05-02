@@ -60,30 +60,9 @@
     }
 }
 
-- (void)animateControlHeight {
-    float toHeight = (self.hermiteCatmull.selectedSegmentIndex == 0 ?
-                      controlHeightForHermite :
-                      controlHeightForCatmull);
-    
-    float fromHeight = (toHeight == controlHeightForHermite ?
-                        controlHeightForCatmull :
-                        controlHeightForHermite);
-    
-    if (self.controlsHeight.constant == fromHeight) {
-        [UIView animateWithDuration:1.0 delay:0 options:UIViewAnimationOptionCurveEaseIn
-                         animations:^{
-                             self.controlsHeight.constant = toHeight;
-                         }
-                         completion:nil];
-    }
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    controlHeightForCatmull = 100.0;
-    controlHeightForHermite = 60.0;
-    self.controlsHeight.constant = controlHeightForHermite;
     
     self.clearButton.layer.cornerRadius = 4;
     self.clearButton.clipsToBounds = YES;
@@ -113,7 +92,6 @@
 }
 
 - (IBAction)hermiteCatmullChanged:(UISegmentedControl *)sender {
-    [self animateControlHeight];
     [self updateGraphicsView];
 }
 
