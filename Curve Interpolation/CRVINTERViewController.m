@@ -23,7 +23,6 @@
 
 @property UITapGestureRecognizer *gestureRecognizer;
 @property (strong, nonatomic) IBOutlet UILabel *noPointsHelperLabel;
-@property (strong, nonatomic) IBOutlet NSLayoutConstraint *controlsHeight;
 
 - (IBAction)clearDataPoints:(UIButton *)sender;
 - (IBAction)alphaChanged:(UISlider *)sender;
@@ -33,15 +32,6 @@
 @end
 
 @implementation CRVINTERViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)updateGraphicsView {
     self.alphaLabel.text = [NSString stringWithFormat:@"%.2f", self.alphaSlider.value];
@@ -76,6 +66,10 @@
     self.gestureRecognizer.numberOfTapsRequired = 1;
     self.gestureRecognizer.numberOfTouchesRequired = 1;
     [self.graphicsView addGestureRecognizer:self.gestureRecognizer];
+
+    self.alphaLabel.hidden = YES;
+    self.alphaTitle.hidden = YES;
+    self.alphaSlider.hidden = YES;
     
     [self clearDataPoints:nil];
     [self updateGraphicsView];
@@ -92,6 +86,11 @@
 }
 
 - (IBAction)hermiteCatmullChanged:(UISegmentedControl *)sender {
+    BOOL isHermite = (self.hermiteCatmull.selectedSegmentIndex == 0);
+    self.alphaLabel.hidden = isHermite;
+    self.alphaTitle.hidden = isHermite;
+    self.alphaSlider.hidden = isHermite;
+
     [self updateGraphicsView];
 }
 

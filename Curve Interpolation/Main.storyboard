@@ -136,7 +136,6 @@
                         <outlet property="alphaTitle" destination="Woz-uk-2Ju" id="Wos-Y8-bh5"/>
                         <outlet property="clearButton" destination="y7C-uF-33e" id="cIL-US-mBl"/>
                         <outlet property="closedSwitch" destination="zjI-kJ-0zw" id="a2k-jB-Gyn"/>
-                        <outlet property="controlsHeight" destination="XKg-Hz-XfQ" id="ySi-Tp-heM"/>
                         <outlet property="graphicsView" destination="Nt6-tg-QDM" id="4TM-JJ-7TO"/>
                         <outlet property="hermiteCatmull" destination="JLK-A1-KlL" id="GWN-CW-L3G"/>
                         <outlet property="noPointsHelperLabel" destination="J0R-jM-h3D" id="446-Ix-lJk"/>
