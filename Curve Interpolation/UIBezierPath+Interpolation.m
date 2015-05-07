@@ -17,7 +17,7 @@
     
     int endIndex = (closed ? [pointsAsNSValues count] : [pointsAsNSValues count]-2);
     NSAssert(alpha >= 0.0 && alpha <= 1.0, @"alpha value is between 0.0 and 1.0, inclusive");
-
+    
     UIBezierPath *path = [UIBezierPath bezierPath];
     int startIndex = (closed ? 0 : 1);
     for (int ii=startIndex; ii < endIndex; ++ii) {
@@ -36,15 +36,25 @@
         float d3 = ccpLength(ccpSub(p3, p2));
         
         CGPoint b1, b2;
-        b1 = ccpMult(p2, powf(d1, 2*alpha));
-        b1 = ccpSub(b1, ccpMult(p0, powf(d2, 2*alpha)));
-        b1 = ccpAdd(b1, ccpMult(p1,(2*powf(d1, 2*alpha) + 3*powf(d1, alpha)*powf(d2, alpha) + powf(d2, 2*alpha))));
-        b1 = ccpMult(b1, 1.0 / (3*powf(d1, alpha)*(powf(d1, alpha)+powf(d2, alpha))));
+        if (d1 == 0) {
+            b1 = p1;
+        }
+        else {
+            b1 = ccpMult(p2, powf(d1, 2*alpha));
+            b1 = ccpSub(b1, ccpMult(p0, powf(d2, 2*alpha)));
+            b1 = ccpAdd(b1, ccpMult(p1,(2*powf(d1, 2*alpha) + 3*powf(d1, alpha)*powf(d2, alpha) + powf(d2, 2*alpha))));
+            b1 = ccpMult(b1, 1.0 / (3*powf(d1, alpha)*(powf(d1, alpha)+powf(d2, alpha))));
+        }
         
-        b2 = ccpMult(p1, powf(d3, 2*alpha));
-        b2 = ccpSub(b2, ccpMult(p3, powf(d2, 2*alpha)));
-        b2 = ccpAdd(b2, ccpMult(p2,(2*powf(d3, 2*alpha) + 3*powf(d3, alpha)*powf(d2, alpha) + powf(d2, 2*alpha))));
-        b2 = ccpMult(b2, 1.0 / (3*powf(d3, alpha)*(powf(d3, alpha)+powf(d2, alpha))));
+        if (d3 == 0) {
+            b2 = p2;
+        }
+        else {
+            b2 = ccpMult(p1, powf(d3, 2*alpha));
+            b2 = ccpSub(b2, ccpMult(p3, powf(d2, 2*alpha)));
+            b2 = ccpAdd(b2, ccpMult(p2,(2*powf(d3, 2*alpha) + 3*powf(d3, alpha)*powf(d2, alpha) + powf(d2, 2*alpha))));
+            b2 = ccpMult(b2, 1.0 / (3*powf(d3, alpha)*(powf(d3, alpha)+powf(d2, alpha))));
+        }
         
         if (ii==startIndex)
             [path moveToPoint:p1];
@@ -61,7 +71,7 @@
 +(UIBezierPath *)interpolateCGPointsWithHermite:(NSArray *)pointsAsNSValues closed:(BOOL)closed {
     if ([pointsAsNSValues count] < 2)
         return nil;
-
+    
     int nCurves = (closed ? [pointsAsNSValues count] : [pointsAsNSValues count]-1);
     
     UIBezierPath *path = [UIBezierPath bezierPath];
