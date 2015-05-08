@@ -9,6 +9,8 @@
 #import "UIBezierPath+Interpolation.h"
 #import "CGPointExtension.h"
 
+#define kEPSILON 1.0e-5
+
 @implementation UIBezierPath (Interpolation)
 
 +(UIBezierPath *)interpolateCGPointsWithCatmullRom:(NSArray *)pointsAsNSValues closed:(BOOL)closed alpha:(float)alpha {
@@ -36,7 +38,7 @@
         float d3 = ccpLength(ccpSub(p3, p2));
         
         CGPoint b1, b2;
-        if (d1 == 0) {
+        if (fabs(d1) < kEPSILON) {
             b1 = p1;
         }
         else {
@@ -46,7 +48,7 @@
             b1 = ccpMult(b1, 1.0 / (3*powf(d1, alpha)*(powf(d1, alpha)+powf(d2, alpha))));
         }
         
-        if (d3 == 0) {
+        if (fabs(d3) < kEPSILON) {
             b2 = p2;
         }
         else {
