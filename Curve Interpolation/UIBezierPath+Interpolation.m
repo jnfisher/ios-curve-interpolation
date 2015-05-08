@@ -17,25 +17,25 @@
     if ([pointsAsNSValues count] < 4)
         return nil;
     
-    int endIndex = (closed ? [pointsAsNSValues count] : [pointsAsNSValues count]-2);
+    NSInteger endIndex = (closed ? [pointsAsNSValues count] : [pointsAsNSValues count]-2);
     NSAssert(alpha >= 0.0 && alpha <= 1.0, @"alpha value is between 0.0 and 1.0, inclusive");
     
     UIBezierPath *path = [UIBezierPath bezierPath];
-    int startIndex = (closed ? 0 : 1);
-    for (int ii=startIndex; ii < endIndex; ++ii) {
+    NSInteger startIndex = (closed ? 0 : 1);
+    for (NSInteger ii=startIndex; ii < endIndex; ++ii) {
         CGPoint p0, p1, p2, p3;
-        int nextii      = (ii+1)%[pointsAsNSValues count];
-        int nextnextii  = (nextii+1)%[pointsAsNSValues count];
-        int previi      = (ii-1 < 0 ? [pointsAsNSValues count]-1 : ii-1);
+        NSInteger nextii      = (ii+1)%[pointsAsNSValues count];
+        NSInteger nextnextii  = (nextii+1)%[pointsAsNSValues count];
+        NSInteger previi      = (ii-1 < 0 ? [pointsAsNSValues count]-1 : ii-1);
         
         [pointsAsNSValues[ii] getValue:&p1];
         [pointsAsNSValues[previi] getValue:&p0];
         [pointsAsNSValues[nextii] getValue:&p2];
         [pointsAsNSValues[nextnextii] getValue:&p3];
         
-        float d1 = ccpLength(ccpSub(p1, p0));
-        float d2 = ccpLength(ccpSub(p2, p1));
-        float d3 = ccpLength(ccpSub(p3, p2));
+        CGFloat d1 = ccpLength(ccpSub(p1, p0));
+        CGFloat d2 = ccpLength(ccpSub(p2, p1));
+        CGFloat d3 = ccpLength(ccpSub(p3, p2));
         
         CGPoint b1, b2;
         if (fabs(d1) < kEPSILON) {
@@ -74,10 +74,10 @@
     if ([pointsAsNSValues count] < 2)
         return nil;
     
-    int nCurves = (closed ? [pointsAsNSValues count] : [pointsAsNSValues count]-1);
+    NSInteger nCurves = (closed ? [pointsAsNSValues count] : [pointsAsNSValues count]-1);
     
     UIBezierPath *path = [UIBezierPath bezierPath];
-    for (int ii=0; ii < nCurves; ++ii) {
+    for (NSInteger ii=0; ii < nCurves; ++ii) {
         NSValue *value  = pointsAsNSValues[ii];
         
         CGPoint curPt, prevPt, nextPt, endPt;
@@ -85,14 +85,14 @@
         if (ii==0)
             [path moveToPoint:curPt];
         
-        int nextii = (ii+1)%[pointsAsNSValues count];
-        int previi = (ii-1 < 0 ? [pointsAsNSValues count]-1 : ii-1);
+        NSInteger nextii = (ii+1)%[pointsAsNSValues count];
+        NSInteger previi = (ii-1 < 0 ? [pointsAsNSValues count]-1 : ii-1);
         
         [pointsAsNSValues[previi] getValue:&prevPt];
         [pointsAsNSValues[nextii] getValue:&nextPt];
         endPt = nextPt;
         
-        float mx, my;
+        CGFloat mx, my;
         if (closed || ii > 0) {
             mx = (nextPt.x - curPt.x)*0.5 + (curPt.x - prevPt.x)*0.5;
             my = (nextPt.y - curPt.y)*0.5 + (curPt.y - prevPt.y)*0.5;
