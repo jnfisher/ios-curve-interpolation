@@ -17,7 +17,7 @@ NSMutableArray *array = [NSMutableArray new];
 [array addObject:[NSValue valueWithBytes:&CGPointMake(1.0, 1.0) objCType:encoding];
 [array addObject:[NSValue valueWithBytes:&CGPointMake(1.0, 0.0) objCType:encoding];
 
-UIBezierPath *path = interpolateCGPointsWithCatmullRom:array closed:NO alpha:0.5;
+UIBezierPath *path = [interpolateCGPointsWithCatmullRom:array closed:NO alpha:0.5];
 // Use the path
 ```
 
